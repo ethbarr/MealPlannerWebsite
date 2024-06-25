@@ -1,0 +1,111 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-day {
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.meal-type {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.recipe-item {
+  padding: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal-section {
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  min-height: 100px;
+}
+
+.drop-target {
+  margin: 5px 0;
+}
+
+.recipes-grid-container {
+  margin-top: 20px;
+}
+
+.recipe-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.meal-slot {
+  border: 2px dashed #ccc; /* Add a dashed border */
+  padding: 10px;
+  margin: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer; /* Show pointer cursor when hovering */
+}
+
+.calendar {
+  display: flex;
+  align-items: center;
+}
+
+.days-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.day {
+  flex: 0 0 auto; /* Prevent flex items from growing or shrinking */
+  width: 100vw; /* Adjust based on the number of days you want to show */
+  text-align: center;
+}
+
+/* Example media query for larger screens */
+@media (min-width: 768px) {
+  .day {
+    width: 33.33vw; /* Show 3 days at a time */
+  }
+}
+
+@media (min-width: 1024px) {
+  .day {
+    width: 14.28vw; /* Show 7 days at a time */
+  }
+}

@@ -1,0 +1,8 @@
+<div class="grocery-list">
+  <h2>Grocery List</h2>
+  <ul>
+    <li *ngFor="let ingredient of ingredientsMap | keyvalue">
+      {{ ingredient.key }} <span *ngIf="ingredient.value > 1"> (for {{ ingredient.value }} recipes)</span>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,11 @@
+<div class="recipes-grid-container">
+  <div class="recipes-grid" cdkDropList
+       [cdkDropListData]="recipes" id="recipesGrid"
+       [cdkDropListConnectedTo]="getConnectedDropListIds()"
+       (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let recipe of recipes" cdkDrag class="recipe-card-wrapper">
+      <app-recipe-card [recipe]="recipe"></app-recipe-card>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,45 @@
+<div class="recipe-detail" *ngIf="recipe">
+  <h2 class="recipe-title">{{ recipe.name }}</h2>
+  <div class="rating">
+    <span>rate this recipe:</span>
+    <!-- Add rating component here -->
+    <span class="stars">★★★★★</span> <span>5 from 1 vote</span>
+  </div>
+  <div class="recipe-meta">
+    <div><strong>Prep Time:</strong> 10 mins</div>
+    <div><strong>Marinating Time:</strong> 2 hrs</div>
+    <div><strong>Total Time:</strong> 2 hrs 10 mins</div>
+    <div><strong>Serves:</strong> 6</div>
+  </div>
+  <div class="buttons">
+    <button class="save-recipe">Save Recipe</button>
+    <button class="print-recipe">Print Recipe</button>
+  </div>
+  <img [src]="'data:image/webp;base64,' + recipe.thumbnail" alt="{{ recipe.name }}" class="recipe-image">
+  <p class="recipe-description">{{ recipe.description }}</p>
+  <h3>Ingredients</h3>
+  <ul class="recipe-ingredients">
+    <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+  </ul>
+  <h3>Instructions</h3>
+  <ol class="recipe-instructions">
+    <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
+  </ol>
+  <p>Ratings: {{ recipe.ratings }}</p>
+</div>
+
+<!--<div class="recipe-detail" *ngIf="recipe">
+  <h2 class="recipe-title">{{ recipe.name }}</h2>
+  <img [src]="recipe.image" alt="{{ recipe.name }}" class="recipe-image">
+  <p class="recipe-description">{{ recipe.description }}</p>
+  <h3>Ingredients</h3>
+  <ul class="recipe-ingredients">
+    <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+  </ul>
+  <h3>Instructions</h3>
+  <ol class="recipe-instructions">
+    <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
+  </ol>
+</div>-->
+
+

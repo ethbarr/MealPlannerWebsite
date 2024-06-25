@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="hamburger-menu" (click)="toggleMenu()">
+    &#9776;
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search recipes..." [(ngModel)]="searchQuery" (keyup.enter)="onSearch()">
+  </div>
+</nav>
+<div class="sidenav" [ngClass]="{'open': menuOpen}">
+  <a (click)="toggleMenu()" class="closebtn">&times;</a>
+  <a routerLink="/" (click)="toggleMenu()">Home</a>
+  <a routerLink="/add-recipe" (click)="toggleMenu()">Add Recipe</a>
+  <a routerLink="/my-recipes" (click)="toggleMenu()">My Recipes <span class="heart">&#10084;</span></a>
+  <a routerLink="/calendar" (click)="toggleMenu()">Meal Planner</a>
+  <a routerLink="/grocery-list" (click)="toggleMenu()">Grocery List</a>
+</div>

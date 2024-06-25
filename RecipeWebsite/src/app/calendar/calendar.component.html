@@ -1,0 +1,35 @@
+<div class="calendar">
+  <button class="scroll-btn left" (click)="scrollLeft()" aria-label="Scroll Left">‹</button>
+
+  <!-- Days Container -->
+  <div class="days-container">
+    <!-- Iterate over each day of the week -->
+    <div *ngFor="let day of week; let dayIndex = index" class="day">
+      <h3>{{ day.name }}</h3> <!-- Display the day name -->
+      <div class="meals">
+        <!-- Iterate over each meal type (e.g., breakfast, lunch, dinner, snack) -->
+        <div *ngFor="let mealType of mealTypes" class="meal-slot">
+          <h4>{{ mealType }}</h4>
+          <!-- Drop list for each meal slot, with a unique ID combining day name and meal type -->
+          <div cdkDropList
+               [id]="day.name + '-' + mealType"
+               [cdkDropListData]="day.meals[mealType]"
+               [cdkDropListConnectedTo]="getConnectedDropListIds()"
+               (cdkDropListDropped)="drop($event)"
+               class="drop-list">
+            <!-- Display recipes assigned to this meal slot -->
+            <div *ngFor="let recipe of day.meals[mealType]" cdkDrag class="recipe">
+              {{ recipe.name }}
+            </div>
+            <!-- Placeholder for empty meal slot -->
+            <div *ngIf="day.meals[mealType].length === 0" class="placeholder">
+              Drag recipes here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Right Scroll Arrow -->
+  <button class="scroll-btn right" (click)="scrollRight()" aria-label="Scroll Right">›</button>
+</div>

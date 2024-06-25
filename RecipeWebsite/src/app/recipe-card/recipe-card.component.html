@@ -1,0 +1,12 @@
+<div class="recipe-card" draggable="true">
+  <img class="thumbnail-img" [src]="recipe.thumbnail" alt="{{ recipe.name }}" (error)="onImageError($event)" />
+  <div class="recipe-info">
+    <h3>{{ recipe.name }}</h3>
+    <p>{{ recipe.description }}</p>
+    <span class="stars">★★★★★</span>
+    <button (click)="toggleFavorite()">
+      <span *ngIf="recipe.isFavorite">❤️</span>
+      <span *ngIf="!recipe.isFavorite">♡</span>
+    </button>
+  </div>
+</div>
