@@ -12,8 +12,10 @@ export class CalendarService {
   constructor() { }
 
   addRecipeToCalendar(recipe: Recipe): void {
+    console.log('Adding recipe to calendar:', recipe);
     const currentRecipes = this.selectedRecipesSource.getValue();
     this.selectedRecipesSource.next([...currentRecipes, recipe]);
+    console.log('Added recipe to calendar:');
   }
 
   getSelectedRecipes(): Recipe[] {

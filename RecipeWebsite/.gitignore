@@ -16,7 +16,7 @@
 .DS_Store
 .idea
 .vscode
-.vs
+.vs/
 *.log
 *.log.*
 npm-debug.log*

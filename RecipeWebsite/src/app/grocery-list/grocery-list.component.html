@@ -1,8 +1,13 @@
-<div class="grocery-list">
-  <h2>Grocery List</h2>
-  <ul>
-    <li *ngFor="let ingredient of ingredientsMap | keyvalue">
-      {{ ingredient.key }} <span *ngIf="ingredient.value > 1"> (for {{ ingredient.value }} recipes)</span>
-    </li>
-  </ul>
+<div *ngIf="listState === 'in'" class="backdrop" (click)="toggleList()" aria-label="Close grocery list"></div>
+<div [@slideInOut]="listState" class="grocery-list-panel">
+  <div class="grocery-list-container">
+    <div class="grocery-list">
+      <h2>Grocery List</h2>
+      <ul>
+        <li *ngFor="let ingredient of ingredientsMap | keyvalue">
+          {{ ingredient.key }} <span *ngIf="ingredient.value > 1"> (for {{ ingredient.value }} meals)</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

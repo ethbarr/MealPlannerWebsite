@@ -1,2 +1,8 @@
-<app-calendar></app-calendar>
-<app-recipes-grid></app-recipes-grid>
+<div class="meal-planner">
+  <app-calendar></app-calendar>
+  <app-recipes-grid></app-recipes-grid>
+  <app-grocery-list [ingredientsMap]="ingredientsMap"></app-grocery-list>
+</div>
+
+<button class="grocery-list-toggle" (click)="toggleGroceryList()">Toggle Grocery List</button>
+
